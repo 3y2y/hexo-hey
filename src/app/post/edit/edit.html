@@ -65,6 +65,12 @@
             </md-autocomplete>
           </md-chips>
         </md-input-container>
+
+        <md-input-container flex md-float-bottom ng-class="{'has-value': vm.post.toc.length}">
+          <label translate>TOC</label>
+          <input name="toc" type="checkbox" value="true" ng-model="vm.post.toc">
+        </md-input-container>
+
         <div ng-if="vm.slug" flex layout="row" layout-align="space-between center">
           <md-button ng-disabled="!editForm.$valid" ng-click="vm.update()" class="md-primary md-raised">{{'UPDATE' | translate}}</md-button>
           <md-button ng-disabled="!editForm.$valid" ng-click="vm.update(!vm.post.published)" class="md-primary">{{vm.post.published?'UNPUBLISH':'PUBLISH' | translate}}</md-button>

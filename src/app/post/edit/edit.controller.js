@@ -20,6 +20,7 @@ class PostEditCtrl {
 
     PostService.getCategories().then(data => this.categories = data);
     PostService.getTags().then(data => this.tags = data);
+    PostService.getToc().then(data => this.toc = data);
   }
 
   checkUnique(form) {

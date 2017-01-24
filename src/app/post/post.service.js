@@ -70,6 +70,16 @@ class PostService {
       return res.data;
     });
   }
+  
+  getToc() {
+    if (this.toc.length) {
+      return this.$q.resolve(this.toc);
+    }
+    return this.$http.get(this.Config.APIURL + '/toc').then(res => {
+      this.toc = res.data;
+      return res.data;
+    });
+  }
 }
 
 export default PostService;
